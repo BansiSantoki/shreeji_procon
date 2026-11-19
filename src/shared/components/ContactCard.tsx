@@ -19,7 +19,7 @@ export function ContactCard({ icon, iconBadge, title, detail, href, label, exter
       aria-label={label}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       className={[
-        'group relative flex min-h-[clamp(92px,24vw,112px)] w-full flex-col items-center overflow-hidden rounded-[16px] border px-2 pt-2 pb-2 text-center backdrop-blur-md',
+        'group relative flex min-h-[clamp(84px,22vw,102px)] w-full flex-col items-center overflow-hidden rounded-[14px] border px-1.5 pt-1.5 pb-1.5 text-center backdrop-blur-md',
         'transition-[transform,box-shadow,border-color] duration-300 ease-premium will-change-transform',
         'hover:-translate-y-1 hover:scale-[1.02] focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink',
         'active:scale-[0.98] active:duration-150',
@@ -30,16 +30,16 @@ export function ContactCard({ icon, iconBadge, title, detail, href, label, exter
     >
       <span
         className={[
-          'flex size-8 shrink-0 items-center justify-center text-gold transition-transform duration-300 ease-premium group-hover:-translate-y-0.5 group-hover:scale-110',
+          'flex size-7 shrink-0 items-center justify-center text-gold transition-transform duration-300 ease-premium group-hover:-translate-y-0.5 group-hover:scale-110',
           iconBadge ? 'rounded-full bg-gold shadow-[0_0_12px_rgba(255,185,0,0.55)]' : '',
         ].join(' ')}
       >
         {icon}
       </span>
-      <span className="mt-1 whitespace-nowrap font-sans text-[clamp(13px,4vw,17px)] font-extrabold leading-tight text-white">
+      <span className="mt-0.5 whitespace-nowrap font-sans text-[clamp(12px,3.7vw,16px)] font-extrabold leading-tight text-white">
         {title}
       </span>
-      <span className="mt-0.5 mb-1.5 font-sans text-[clamp(10px,3vw,12px)] font-semibold leading-snug break-words text-white/95">
+      <span className="mt-0.5 mb-1 font-sans text-[clamp(9px,2.8vw,11px)] font-semibold leading-snug break-words text-white/95">
         {detail}
       </span>
       <span aria-hidden className="mt-auto block h-[3px] w-[clamp(36px,11vw,48px)] shrink-0 rounded-full bg-gold" />
