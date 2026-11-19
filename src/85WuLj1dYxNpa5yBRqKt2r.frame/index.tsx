@@ -113,9 +113,9 @@ export default function Home(props: Props) {
               <motion.li
                 key={key}
                 className="flex"
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, ease: EASE, delay: 0.18 + i * 0.05 }}
+                initial={{ opacity: 0, y: 20, scale: 0.94 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 22, delay: 0.18 + i * 0.05 }}
               >
                 <ContactCard {...card} />
               </motion.li>

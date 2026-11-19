@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 type ContactCardProps = {
   icon: React.ReactNode
@@ -14,15 +15,17 @@ type ContactCardProps = {
 
 export function ContactCard({ icon, iconBadge, title, detail, href, label, external, highlighted }: ContactCardProps) {
   return (
-    <a
+    <motion.a
       href={href}
       aria-label={label}
+      whileHover={{ y: -3, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: 'spring', stiffness: 350, damping: 24 }}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       className={[
         'group relative flex min-h-[clamp(84px,22vw,102px)] w-full flex-col items-center overflow-hidden rounded-[14px] border px-1.5 pt-1.5 pb-1.5 text-center backdrop-blur-md',
         'transition-[transform,box-shadow,border-color] duration-300 ease-premium will-change-transform',
-        'hover:-translate-y-1 hover:scale-[1.02] focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink',
-        'active:scale-[0.98] active:duration-150',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink',
         highlighted
           ? 'border-gold/90 bg-[rgb(58_44_10/0.72)] shadow-[0_0_18px_rgba(255,185,0,0.45),inset_0_0_26px_rgba(255,185,0,0.28),inset_0_1px_0_rgba(255,230,150,0.5)] hover:shadow-[0_0_28px_rgba(255,185,0,0.65),inset_0_0_30px_rgba(255,185,0,0.34),inset_0_1px_0_rgba(255,230,150,0.55)]'
           : 'border-white/20 bg-glass shadow-[0_10px_24px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12),inset_-14px_-14px_28px_-18px_rgba(255,185,0,0.35)] hover:border-gold/70 hover:shadow-[0_12px_28px_rgba(0,0,0,0.5),0_0_18px_rgba(255,185,0,0.3),inset_0_1px_0_rgba(255,255,255,0.14),inset_-14px_-14px_28px_-16px_rgba(255,185,0,0.5)]',
@@ -43,6 +46,6 @@ export function ContactCard({ icon, iconBadge, title, detail, href, label, exter
         {detail}
       </span>
       <span aria-hidden className="mt-auto block h-[3px] w-[clamp(36px,11vw,48px)] shrink-0 rounded-full bg-gold" />
-    </a>
+    </motion.a>
   )
 }
