@@ -47,7 +47,7 @@ export default function Home(props: Props) {
           <span className="divider-glow mt-3 block h-[3px] w-14 rounded-full bg-gold" />
         </motion.header>
 
-        <nav aria-label="Contact Shreeji Procon" className="mt-7 sm:mt-8">
+        <nav aria-label="Contact Shreeji Procon" className="mt-9 sm:mt-10">
           <ul className="grid grid-cols-2 gap-[clamp(8px,2.4vw,12px)] sm:gap-4">
             {[
               {
