@@ -1,0 +1,53 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORT — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,500;6..12,600;6..12,700;6..12,800&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORT MUST NEVER BE DELETED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss';
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+@theme {
+  --color-gold: #ffb900;
+  --color-gold-soft: #ffcf4d;
+  --color-navy: #0d1524;
+  --color-ink: #0a0f1a;
+  --color-glass: rgb(22 25 32 / 0.62);
+  --font-display: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+  --ease-premium: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-navy);
+  color: #fff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Fixed poster background: always cover the viewport with the construction image. */
+.poster-bg {
+  background-image: url('https://cdn.magicpatterns.com/uploads/dRw3mrpgJrXmQZYR7SxtYQ/image.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.poster-fill {
+  display: none;
+}
+
+@keyframes divider-glow {
+  0%, 100% { box-shadow: 0 0 6px rgb(255 185 0 / 0.45); }
+  50% { box-shadow: 0 0 14px rgb(255 185 0 / 0.85); }
+}
+.divider-glow {
+  animation: divider-glow 3.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .divider-glow { animation: none; }
+  html { scroll-behavior: auto; }
+}
