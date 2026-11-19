@@ -114,8 +114,12 @@ export default function Home(props: Props) {
                 key={key}
                 className="flex"
                 initial={{ opacity: 0, y: 20, scale: 0.94 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ type: 'spring', stiffness: 260, damping: 22, delay: 0.18 + i * 0.05 }}
+                animate={{ opacity: 1, y: [0, -2, 0], scale: [1, 1.01, 1] }}
+                transition={{
+                  opacity: { duration: 0.35, delay: 0.18 + i * 0.05 },
+                  y: { duration: 3.2, ease: 'easeInOut', repeat: Infinity, delay: i * 0.3 },
+                  scale: { duration: 3.2, ease: 'easeInOut', repeat: Infinity, delay: i * 0.3 },
+                }}
               >
                 <ContactCard {...card} />
               </motion.li>
