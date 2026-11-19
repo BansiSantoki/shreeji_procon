@@ -19,7 +19,7 @@ export function ContactCard({ icon, iconBadge, title, detail, href, label, exter
       href={href}
       aria-label={label}
       whileHover={{ y: -3, scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      whileTap={{ scale: 0.94, y: 2 }}
       transition={{ type: 'spring', stiffness: 350, damping: 24 }}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       className={[
