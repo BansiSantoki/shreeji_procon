@@ -45,7 +45,14 @@ export function ContactCard({ icon, iconBadge, title, detail, href, label, exter
       <span className="mt-0.5 mb-1 font-sans text-[clamp(9px,2.8vw,11px)] font-semibold leading-snug break-words text-white/95">
         {detail}
       </span>
-      <span aria-hidden className="mt-auto block h-[3px] w-[clamp(36px,11vw,48px)] shrink-0 rounded-full bg-gold" />
+      <span
+        aria-hidden
+        className="mt-auto block h-[3px] w-[clamp(36px,11vw,48px)] shrink-0 rounded-full bg-gold transition-[width,box-shadow] duration-300 group-hover:w-[clamp(44px,13vw,56px)] group-hover:shadow-[0_0_10px_rgba(255,185,0,0.7)]"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-10 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.08] to-transparent transition-transform duration-700 ease-premium group-hover:translate-x-full"
+      />
     </motion.a>
   )
 }
